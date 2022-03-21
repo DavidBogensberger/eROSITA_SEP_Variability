@@ -59,7 +59,7 @@ def findlowhigh(c, cl): # find the adjacent c values on the c grid, and return t
     
 def varBV(AR, NB, BV): 
     #Read in the results of the text file: 
-    F = open('bv_varnonvar2boundaries_nrep2000_all.txt')
+    F = open('bv_varnonvar2aboundaries_nrep10000_all.txt')
     Fl = F.readlines()
     Cpbs, Nbs, S1s, S2s, S3s = [], [], [], [], []
     for i in range(1, len(Fl)):
@@ -70,8 +70,8 @@ def varBV(AR, NB, BV):
         S3s.append(float(Fl[i].split()[4]))
     F.close()
     
-    n = [100, 200, 500, 1000]
-    sc = [0.12, 0.4, 1.2, 4.0, 12.0, 40.0, 120.0, 400.0, 1200.0]
+    n = [50, 135, 370, 1000]
+    sc = [0.04, 0.12, 0.4, 1.2, 4.0, 12.0, 40.0, 120.0, 400.0, 1200.0]
     Ns = len(Nbs)
     N = len(AR)
     AR = [40*AR[i] for i in range(N)] # The multiplication of 40 is necessary because the simulations were performed in performed for counts, rather than count rates. 
@@ -165,7 +165,7 @@ def varBV(AR, NB, BV):
 
 def varMAD(AR, NB, MAD): 
     #Read in the results of the text file: 
-    F = open('mad_varnonvar2boundaries_nrep2000_all.txt')
+    F = open('mad_varnonvar2aboundaries_nrep10000_all.txt')
     Fl = F.readlines()
     Cpbs, Nbs, S1s, S2s, S3s = [], [], [], [], []
     for i in range(1, len(Fl)):
@@ -176,8 +176,8 @@ def varMAD(AR, NB, MAD):
         S3s.append(float(Fl[i].split()[4]))
     F.close()
     
-    n = [100, 200, 500, 1000]
-    sc = [0.12, 0.4, 1.2, 4.0, 12.0, 40.0, 120.0, 400.0, 1200.0]
+    n = [50, 135, 370, 1000]
+    sc = [0.04, 0.12, 0.4, 1.2, 4.0, 12.0, 40.0, 120.0, 400.0, 1200.0]
     Ns = len(Nbs)
     
     #Do this for the list of sources.
