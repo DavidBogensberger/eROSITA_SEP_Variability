@@ -357,7 +357,7 @@ for i in range(Nlc):
 
         for l in range(Nedr):
             for k in range(ise_erdr[l][0], ise_erdr[l][1]):
-                if np.isinf(C0[k][m]) + np.isnan(C0[k][m]) + np.isinf(BC0[k][m]) + np.isnan(BC0[k][m]) + np.isinf(FE0[k][m]) + np.isnan(FE0[k][m]) + np.isinf(BA0[k]) + np.isnan(BA0[k]) == 0:
+                if np.isinf(C0[k][eb]) + np.isnan(C0[k][eb]) + np.isinf(BC0[k][eb]) + np.isnan(BC0[k][eb]) + np.isinf(FE0[k][eb]) + np.isnan(FE0[k][eb]) + np.isinf(BA0[k]) + np.isnan(BA0[k]) == 0:
                     C[l] += C0[k][eb]
                     BC[l] += BC0[k][eb]
                     FE[l] += FE0[k][eb]
@@ -426,3 +426,4 @@ if os.path.isfile('Identified_variable_sources.fits') == 1:
 
 t = Table([lcf, BVC, MVC, VC], names=('Light_curve_file', 'SCATT_LO_varclass', 'AMPL_SIG_varclass', 'Varclass'))
 t.write('Identified_variable_sources.fits', format='fits')
+
