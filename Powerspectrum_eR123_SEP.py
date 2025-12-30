@@ -79,8 +79,8 @@ def Gaussmooth(x, y, sigma):
             if lx[j] - lx[i] > 3 * sigma:
                 break
             if abs(lx[i] - lx[j]) < 3 * sigma:
-                gs += np.exp(-((lx[i] - lx[j])**2/(2*sigma)))
-                sy1 += np.exp(-((lx[i] - lx[j])**2/(2*sigma))) * y[j]
+                gs += np.exp(-((lx[i] - lx[j])**2/(2*sigma**2)))
+                sy1 += np.exp(-((lx[i] - lx[j])**2/(2*sigma**2))) * y[j]
         if gs > 0:
             sy[i] = sy1 / gs
         else:
@@ -292,3 +292,4 @@ plt.legend(prop={'size':12})
 plt.savefig('APSfit_aliasbrokpl.png', format='png')
 
 plt.show()
+
